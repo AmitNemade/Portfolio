@@ -255,10 +255,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full mt-20">
+        <div className="w-full flex items-center min-h-screen mt-20">
           <ContactForm />
         </div>
-        <div className="h-36 lg:h-72" />
       </div>
     </main>
   );
