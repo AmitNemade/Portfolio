@@ -31,20 +31,47 @@ const AppSkeleton = ({ children }: { children: ReactNode }) => {
   return (
     <div id="myAppContainer" className={isDarkMode ? "dark" : ""}>
       <Head>
-        <title>Amit Nemade - Web Developer</title>
+        <title>Amit Nemade - Web Developer | ReactJS | NextJS | Flutter</title>
         <meta
           name="description"
           content="Passionate web developer showcasing innovative projects. Specializing in creating responsive and visually appealing websites. Let's bring your ideas to life!"
         />
-        <link rel="canonical" href="https://html-portfolio.web.app/" />
-        <meta property="og:title" content="Amit Nemade - Web Developer" />
+        <link rel="canonical" href="https://amitnemade.vercel.app/" />
+        <meta
+          property="og:title"
+          content="Amit Nemade - Web Developer | ReactJS | NextJS | Flutter | NodeJS"
+        />
         <meta
           property="og:description"
           content="Passionate web developer showcasing innovative projects. Specializing in creating responsive and visually appealing websites. Let's bring your ideas to life!"
         />
-        <meta property="og:image" content="/images/profile_picture.jpg" />
-        <meta property="og:url" content="https://html-portfolio.web.app/" />
+        <meta
+          property="og:image"
+          content="https://amitnemade.vercel.app/images/profile_picture.jpg"
+        />
+        <meta property="og:url" content="https://amitnemade.vercel.app/" />
         <meta property="og:type" content="website" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:site"
+          content="https://amitnemade.vercel.app/"
+        />
+        <meta
+          property="twitter:image"
+          content="https://amitnemade.vercel.app/images/portfolio_preview.png"
+        />
+        <meta
+          property="twitter:title"
+          content="Amit Nemade - Web Developer | ReactJS | NextJS | Flutter | NodeJS"
+        />
+        <meta
+          property="twitter:description"
+          content="Passionate web developer showcasing innovative projects. Specializing in creating responsive and visually appealing websites. Let's bring your ideas to life!"
+        />
+        <meta
+          property="twitter:site"
+          content="https://amitnemade.vercel.app/"
+        />
       </Head>
       {children}
       <div className="flex gap-3 fixed bottom-6 lg:left-16 left-6">
@@ -61,7 +88,8 @@ const AppSkeleton = ({ children }: { children: ReactNode }) => {
             width={20}
             height={20}
             className="min-w-[20px]"
-            alt={isDarkMode ? "Enable light mode" : "Enable dark mode"}
+            alt="Click to open resume"
+            title="View resume"
           />
           Resume
         </Link>
@@ -77,6 +105,7 @@ const AppSkeleton = ({ children }: { children: ReactNode }) => {
             height={20}
             className="min-w-[20px]"
             alt={isDarkMode ? "Enable light mode" : "Enable dark mode"}
+            title="Change theme"
           />
           <div className="w-full pr-2 text-sm">Change theme</div>
         </div>

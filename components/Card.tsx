@@ -28,7 +28,7 @@ export const BoxCard = ({
         cardClassName
       )}
     >
-      <Image src={iconSrc} width={40} height={40} alt={label ?? ""} />
+      <Image src={iconSrc} width={40} height={40} alt={label} title={label} />
       {(label || description) && (
         <div className="flex flex-col items-start gap-1">
           {label && <div className="text-sm">{label}</div>}
@@ -73,7 +73,7 @@ export const HorizontalCard = ({
         cardClassName
       )}
     >
-      <Image src={iconSrc} width={40} height={40} alt={label ?? ""} />
+      <Image src={iconSrc} width={40} height={40} alt={label} title={label} />
       {(label || description) && (
         <div className="flex flex-col items-start gap-1">
           {label && <div className="text-sm">{label}</div>}

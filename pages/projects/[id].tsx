@@ -31,6 +31,7 @@ const NfpPortal = ({ project }: { project: Project }) => {
         <Image
           src={project.bannerImage}
           alt={project.name}
+          title={project.name}
           fill
           className="object-cover transition-all rounded-3xl"
         />
@@ -38,6 +39,7 @@ const NfpPortal = ({ project }: { project: Project }) => {
       <Image
         src={project.bannerImage}
         alt={project.name}
+        title={project.name}
         width={386}
         height={386}
         className="object-cover m-6 lg:hidden transition-all rounded-3xl"
@@ -97,31 +99,6 @@ const NfpPortal = ({ project }: { project: Project }) => {
                     labelClasname={skill.labelClasname}
                     size={skill.size}
                   />
-                  // <div
-                  //   key={skill.name}
-                  //   className={classNames(
-                  //     "flex p-2 flex-col items-center gap-2 justify-center relative bg-white shadow-1 border rounded-2xl w-[100px] h-[100px]"
-                  //   )}
-                  // >
-                  //   <Image
-                  //     src={skill.iconSrc}
-                  //     alt={skill.name}
-                  //     width={skill.size ?? 40}
-                  //     height={skill.size ?? 40}
-                  //     className={classNames(
-                  //       "object-contain lg:object-cover rounded-lg max-w-[40px] max-h-[40px] lg:max-w-max lg:max-h-max",
-                  //       skill.size && `lg:min-h-[${skill.size}px]`
-                  //     )}
-                  //   />
-                  //   <div
-                  //     className={classNames(
-                  //       "text-sm font-medium text-center text-black",
-                  //       skill.labelClasname
-                  //     )}
-                  //   >
-                  //     {skill.name}
-                  //   </div>
-                  // </div>
                 ))}
               </div>
             </div>

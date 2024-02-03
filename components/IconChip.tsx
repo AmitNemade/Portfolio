@@ -9,6 +9,7 @@ const IconChip = ({ label, iconSrc }: { label: string; iconSrc?: string }) => {
           <Image
             src={iconSrc}
             alt={label}
+            title={label}
             fill
             className="object-cover inline-flex"
           />

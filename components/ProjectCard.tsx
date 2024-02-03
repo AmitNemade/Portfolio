@@ -28,6 +28,7 @@ const ProjectCard = ({
       <Image
         src={imageSrc}
         alt={projectName}
+        title={projectName}
         fill
         className="object-cover z-0 group-hover:scale-125 transition-all"
       />
@@ -35,6 +36,7 @@ const ProjectCard = ({
         <Image
           src={"/svgs/arrowsquareout.svg"}
           alt="Open in new tab"
+          title="Open project"
           width={20}
           height={20}
           className=""

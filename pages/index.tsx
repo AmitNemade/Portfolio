@@ -11,7 +11,8 @@ export default function Home() {
         <div className="h-44 w-44 min-h-[176px] relative">
           <Image
             src="/images/profile_picture.jpg"
-            alt="Amit Nemade"
+            alt="Amit Nemade Portfolio"
+            title="Amit Nemade - Web Developer | ReactJS | NextJS | Flutter"
             fill
             className="w-full h-full top-0 left-0  object-cover rounded-full"
           />
@@ -76,7 +77,8 @@ export default function Home() {
               width={160}
               height={160}
               className="bg-transparent"
-              alt={"Scan this QR to know more" ?? ""}
+              alt="QR code for vCard"
+              title={"Scan this QR to know more" ?? ""}
             />
             <div className="flex gap-1 flex-col items-center">
               <div className="text-4xl text-[#FFDD06] mt-4 leading-tight font-light">
@@ -99,21 +101,24 @@ export default function Home() {
                   width={20}
                   height={20}
                   className="bg-transparent"
-                  alt={"Instagram" ?? ""}
+                  alt="LinkedIn"
+                  title="Visit linkedIn profile"
                 />
                 <Image
                   src="/svgs/github.svg"
                   width={20}
                   height={20}
                   className="bg-transparent"
-                  alt={"Instagram" ?? ""}
+                  alt="Github"
+                  title="Visit github profile"
                 />
                 <Image
                   src="/svgs/instagram.svg"
                   width={20}
                   height={20}
                   className="bg-transparent"
-                  alt={"Instagram" ?? ""}
+                  alt="Instagram"
+                  title="Visit instagram profile"
                 />
               </div>
             </div>
@@ -123,7 +128,7 @@ export default function Home() {
           <div className="text-lg font-medium p-4">My Projects</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full lg:gap-10">
             <ProjectCard
-              projectName="NetworkFp Portal"
+              projectName="Network FP Portal"
               imageSrc="/images/nfp-portal.webp"
               href="/projects/nfp-portal"
               className="sm:aspect-square"

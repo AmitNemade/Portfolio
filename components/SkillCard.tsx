@@ -18,6 +18,7 @@ const SkillCard = ({
       <Image
         src={imageSrc}
         alt={name}
+        title={name}
         width={size}
         height={size}
         className={classNames(
