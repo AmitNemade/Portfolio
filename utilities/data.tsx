@@ -28,10 +28,10 @@ export const data: AllProject = {
     description:
       "Network FP is India&apos;s Leading Online Knowledge Platform for Financial Advisors. Network FP&apos;s various programs and events are designed to help financial advisors build and grow their practice/career with a 'Client First' approach.",
     skills: [
-      { name: "ReactJS", iconSrc: "/images/reactjs.png" },
+      { name: "ReactJS", iconSrc: "/images/reactjs.webp" },
       {
         name: "TailwindCSS",
-        iconSrc: "/images/tailwind.png",
+        iconSrc: "/images/tailwind.webp",
         labelClasname: "mt-3",
       },
       { name: "Zoom integration", iconSrc: "/images/zoom.webp", size: 40 },
@@ -55,10 +55,10 @@ export const data: AllProject = {
     description:
       "Find professionals & experts who can help you & your family with financial wellbeing, investments, insurance, wealth management, financial goals & all personal finance products and solutions.",
     skills: [
-      { name: "Next.JS", iconSrc: "/images/nextjs.png" },
+      { name: "Next.JS", iconSrc: "/images/nextjs.webp" },
       {
         name: "TailwindCSS",
-        iconSrc: "/images/tailwind.png",
+        iconSrc: "/images/tailwind.webp",
       },
     ],
     tags: [
@@ -80,10 +80,10 @@ export const data: AllProject = {
     bannerImage: "/images/nfp-portal.webp",
     description: `Search, Connect and Grow with financial advisory and distribution solution providers, technology platforms, software vendors, financial product manufacturers and more.`,
     skills: [
-      { name: "Next.JS", iconSrc: "/images/nextjs.png" },
+      { name: "Next.JS", iconSrc: "/images/nextjs.webp" },
       {
         name: "TailwindCSS",
-        iconSrc: "/images/tailwind.png",
+        iconSrc: "/images/tailwind.webp",
       },
     ],
     tags: [
@@ -108,9 +108,9 @@ export const data: AllProject = {
     are designed to help financial advisors build and grow their
     practice/career with a "Client First" approach.`,
     skills: [
-      { name: "Flutter", iconSrc: "/images/flutter.png", size: 35 },
+      { name: "Flutter", iconSrc: "/images/flutter.webp", size: 35 },
       { name: "Zoom integration", iconSrc: "/images/zoom.webp", size: 40 },
-      { name: "Flutter Provider", iconSrc: "/images/flutter.png", size: 35 },
+      { name: "Flutter Provider", iconSrc: "/images/flutter.webp", size: 35 },
     ],
     tags: [
       "Frontend",
@@ -132,9 +132,9 @@ export const data: AllProject = {
     bannerImage: "/images/compatibility.webp",
     description: `Mentor Connect is a mobile application designed to support professional and/or academic and personal growth. Mentors and Mentees work together to identify, track and achieve goals. Scheduling meetings and communication within the platform makes it easy for mentors and mentees to meet virtually or in-person to achieve success`,
     skills: [
-      { name: "Flutter", iconSrc: "/images/flutter.png", size: 40 },
-      { name: "Google oAuth", iconSrc: "/images/google.png" },
-      { name: "Outlook oAuth", iconSrc: "/images/outlook.png" },
+      { name: "Flutter", iconSrc: "/images/flutter.webp", size: 40 },
+      { name: "Google oAuth", iconSrc: "/images/google.webp" },
+      { name: "Outlook oAuth", iconSrc: "/images/outlook.webp" },
     ],
     tags: [
       "Frontend",
@@ -160,16 +160,16 @@ export const data: AllProject = {
   },
   "astro-ai": {
     name: "AstroAI: ChatGPT Based Astrology Prediction",
-    bannerImage: "/images/astroai.png",
+    bannerImage: "/images/astroai",
     description: `Embark on a cosmic journey with AstroAI, a cutting-edge astrology prediction web app powered by ChatGPT and built on the MERN stack. Seamlessly blending modern technology with ancient wisdom, AstroAI delivers personalized astrological insights, creating a unique and engaging experience for users seeking celestial guidance in the digital age.`,
     skills: [
-      { name: "NodeJS", iconSrc: "/images/nodejs.png", size: 45 },
-      { name: "ExpressJS", iconSrc: "/images/expressjs.png" },
-      { name: "MongoDB", iconSrc: "/images/mongodb.png" },
-      { name: "ReactJS", iconSrc: "/images/reactjs.png" },
+      { name: "NodeJS", iconSrc: "/images/nodejs.webp", size: 45 },
+      { name: "ExpressJS", iconSrc: "/images/expressjs.webp" },
+      { name: "MongoDB", iconSrc: "/images/mongodb.webp" },
+      { name: "ReactJS", iconSrc: "/images/reactjs.webp" },
       {
         name: "TailwindCSS",
-        iconSrc: "/images/tailwind.png",
+        iconSrc: "/images/tailwind.webp",
         labelClasname: "mt-5",
       },
     ],
@@ -193,16 +193,16 @@ export const data: AllProject = {
   },
   "irctc-tatkal-extension": {
     name: "IRCTC Tatkal Automation Tool",
-    bannerImage: "/images/irctctool.png",
+    bannerImage: "/images/irctctool",
     description:
       "IRCTC Tatkal Automation Tool will help you book IRCTC Tatkal tickets at an ease. The tool will autofill all your journey data and will work seamlessly with new IRCTC website. Pre-fill all your data in extension and the extension will fill the data and automatically submit the data. User only needs to fill captcha and any uncertain popups which may come during booking.",
     skills: [
       {
         name: "Chrome Extension",
-        iconSrc: "/images/chrome_extension.png",
+        iconSrc: "/images/chrome-extension.webp",
         size: 45,
       },
-      { name: "Javascript", iconSrc: "/images/javascript.png", size: 40 },
+      { name: "Javascript", iconSrc: "/images/javascript.webp", size: 40 },
     ],
     tags: ["Chrome Extension", "Chrome API", "Javascript"],
     important_note:

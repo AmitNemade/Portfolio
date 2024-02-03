@@ -47,7 +47,7 @@ const AppSkeleton = ({ children }: { children: ReactNode }) => {
         />
         <meta
           property="og:image"
-          content="https://amitnemade.vercel.app/images/profile_picture.jpg"
+          content="https://amitnemade.vercel.app/images/portfolio-short-preview.webp"
         />
         <meta property="og:url" content="https://amitnemade.vercel.app/" />
         <meta property="og:type" content="website" />
@@ -58,7 +58,7 @@ const AppSkeleton = ({ children }: { children: ReactNode }) => {
         />
         <meta
           property="twitter:image"
-          content="https://amitnemade.vercel.app/images/portfolio_preview.png"
+          content="https://amitnemade.vercel.app/images/portfolio-short-preview.webp"
         />
         <meta
           property="twitter:title"

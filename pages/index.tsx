@@ -10,7 +10,7 @@ export default function Home() {
       <div className="flex max-w-2xl w-full xl:w-1/3 2xl:w-2/5 items-center xl:items-start xl:sticky top-0 gap-8  flex-col p-6 xl:p-16 sm:pr-0">
         <div className="h-44 w-44 min-h-[176px] relative">
           <Image
-            src="/images/profile_picture.jpg"
+            src="/images/profile-picture.webp"
             alt="Amit Nemade Portfolio"
             title="Amit Nemade - Web Developer | ReactJS | NextJS | Flutter"
             fill
@@ -167,7 +167,7 @@ export default function Home() {
               />
               <ProjectCard
                 projectName="IRCTC Tatkal Autofill Extension"
-                imageSrc="/images/irctctool.png"
+                imageSrc="/images/irctctool.webp"
                 href="/projects/irctc-tatkal-extension"
               />
             </div>
@@ -183,47 +183,47 @@ export default function Home() {
         <div className="flex flex-col items-start w-full mt-20">
           <div className="text-lg font-medium p-4">Skills</div>
           <div className="flex flex-wrap gap-4 lg:gap-10">
-            <SkillCard name="ReactJS" imageSrc="/images/reactjs.png" />
-            <SkillCard name="Next.Js" imageSrc="/images/nextjs.png" />
+            <SkillCard name="ReactJS" imageSrc="/images/reactjs.webp" />
+            <SkillCard name="Next.Js" imageSrc="/images/nextjs.webp" />
             <SkillCard
               name="Flutter"
-              imageSrc="/images/flutter.png"
+              imageSrc="/images/flutter.webp"
               size={40}
             />
-            <SkillCard name="Redux" imageSrc="/images/redux.png" />
+            <SkillCard name="Redux" imageSrc="/images/redux.webp" />
             <SkillCard
               name="TailwindCSS"
-              imageSrc="/images/tailwind.png"
+              imageSrc="/images/tailwind.webp"
               labelClasname="mt-5"
             />
-            <SkillCard name="MaterialUI" imageSrc="/images/materialui.png" />
+            <SkillCard name="MaterialUI" imageSrc="/images/materialui.webp" />
             <SkillCard
               name="Ant Design"
-              imageSrc="/images/antdesign.png"
+              imageSrc="/images/antdesign.webp"
               size={40}
             />
-            <SkillCard name="NodeJs" imageSrc="/images/nodejs.png" size={45} />
+            <SkillCard name="NodeJs" imageSrc="/images/nodejs.webp" size={45} />
             <SkillCard
               name="ExpressJs"
-              imageSrc="/images/expressjs.png"
+              imageSrc="/images/expressjs.webp"
               size={45}
             />
             <SkillCard
               name="MongoDB"
-              imageSrc="/images/mongodb.png"
+              imageSrc="/images/mongodb.webp"
               size={45}
             />
             <SkillCard
               name="Javascript"
               size={45}
-              imageSrc="/images/javascript.png"
+              imageSrc="/images/javascript.webp"
             />
-            <SkillCard name="Typescript" imageSrc="/images/typescript.png" />
+            <SkillCard name="Typescript" imageSrc="/images/typescript.webp" />
             <SkillCard name="Wordpress" imageSrc="/images/wordpress.webp" />
             <SkillCard
               name="Chrome Extension"
               size={50}
-              imageSrc="/images/chrome_extension.png"
+              imageSrc="/images/chrome-extension.webp"
             />
           </div>
         </div>
