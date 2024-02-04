@@ -76,7 +76,7 @@ const AppSkeleton = ({ children }: { children: ReactNode }) => {
       {children}
       <div className="flex gap-3 fixed bottom-6 lg:left-16 left-6">
         <Link
-          href="/Resume_Amit _Resume.pdf"
+          href="/Frontend_Developer_Amit_Nemade.pdf"
           target="_blank"
           className={classNames(
             "bg-black dark:bg-white flex items-center gap-2 dark:text-black rounded-full p-2 text-sm text-white",

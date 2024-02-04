@@ -193,7 +193,7 @@ export const data: AllProject = {
   },
   "irctc-tatkal-extension": {
     name: "IRCTC Tatkal Automation Tool",
-    bannerImage: "/images/irctctool",
+    bannerImage: "/images/irctctool.webp",
     description:
       "IRCTC Tatkal Automation Tool will help you book IRCTC Tatkal tickets at an ease. The tool will autofill all your journey data and will work seamlessly with new IRCTC website. Pre-fill all your data in extension and the extension will fill the data and automatically submit the data. User only needs to fill captcha and any uncertain popups which may come during booking.",
     skills: [
