@@ -33,7 +33,7 @@ const NfpPortal = ({ project }: { project: Project }) => {
           alt={project.name}
           title={project.name}
           fill
-          className="object-cover transition-all rounded-3xl"
+          className="object-cover border shadow-1 transition-all rounded-3xl"
         />
       </div>
       <Image
