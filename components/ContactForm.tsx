@@ -1,154 +1,166 @@
+"use client";
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import classNames from "classnames";
 
 interface FormData {
   name: string;
   email: string;
   message: string;
 }
+
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
   });
-
+  const [honeypot, setHoneypot] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (honeypot.length > 0) {
+      setIsSubmitted(true);
+      return;
+    }
+    setIsLoading(true);
+    setError(null);
 
     try {
       const response = await fetch("https://formbold.com/s/35el8", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      if (!response.ok) {
-        throw new Error("Failed to submit the form");
-      }
+      if (!response.ok) throw new Error("Failed to submit");
       setIsSubmitted(true);
     } catch (error) {
-      setError(
-        "An error occurred while submitting the form. Please try again."
-      );
-      console.error("Error submitting the form:", error);
+      setError("Something went wrong. Please try again or email me directly.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  return (
-    <form
-      className="max-w-xl w-full flex flex-col gap-4"
-      onSubmit={handleSubmit}
-    >
-      {isSubmitted ? (
-        <div className="w-full p-6 lg:p-10 mt-8 bg-white border rounded-md shadow-md">
-          <h2 className="text-2xl text-black font-bold mb-4">
-            Thank You for Reaching Out!
-          </h2>
-          <p className="text-gray-600">
-            Hey {formData.name}! 🌟 <br />
-            Thanks for your message! I appreciate your interest. I&apos;ll get
-            back to you shortly.
+  // Success State
+  if (isSubmitted) {
+    return (
+      <div className="w-full p-8 lg:p-12 bg-[#E2FF3B] rounded-[2rem] text-black transition-all animate-in fade-in zoom-in duration-500 shadow-xl">
+        <h2 className="text-2xl font-bold mb-4 tracking-tight uppercase">
+          Submission Successful
+        </h2>
+        <div className="space-y-4">
+          <p className="text-lg font-medium leading-relaxed">
+            Thank you for reaching out, {formData.name.split(' ')[0]}.
           </p>
-          <br />
-          <p className="text-gray-600">
-            Feel free to explore more of my portfolio while you wait. If you
-            have more to share or questions, drop me another message.
-          </p>
-          <br />
-          <p className="text-gray-600">
-            Cheers,
-            <br />
-            Amit Nemade
+          <p className="text-base opacity-80 leading-relaxed">
+            Your message has been received. I personally review all inquiries and will get back to you on <strong>{formData.email}</strong> shortly.
           </p>
         </div>
-      ) : (
-        <>
-          <h2 className="text-2xl font-bold">Let&apos;s Connect!</h2>
-          <p className="dark:text-neutral-300 text-neutral-600">
-            Hey there! I&apos;m thrilled that you want to get in touch. <br />
-            Whether you have a question, a project idea, or just want to say
-            hello, I&apos;m all ears!
+        <button
+          onClick={() => setIsSubmitted(false)}
+          className="mt-8 px-8 py-3 bg-black text-[#E2FF3B] rounded-2xl font-bold hover:scale-105 active:scale-95 transition-all shadow-lg text-sm tracking-widest uppercase"
+        >
+          Return to Form
+        </button>
+      </div>
+    );
+  }
+
+  // Input Class Helper to avoid repetition
+  const inputClasses = classNames(
+    "w-full rounded-2xl p-4 transition-all outline-none border",
+    "bg-neutral-100 border-neutral-200 text-neutral-900 placeholder:text-neutral-400 focus:border-[#869900] focus:ring-1 focus:ring-[#869900]/20", // Light Mode
+    "dark:bg-white/5 dark:border-white/10 dark:text-white dark:placeholder:text-neutral-700 dark:focus:border-[#E2FF3B] dark:focus:ring-[#E2FF3B]/30" // Dark Mode
+  );
+
+  const labelClasses = "text-[10px] font-mono tracking-widest transition-colors text-neutral-400 dark:text-neutral-500 group-focus-within:text-[#869900] dark:group-focus-within:text-[#E2FF3B]";
+
+  return (
+    <form className="w-full flex flex-col gap-6" onSubmit={handleSubmit}>
+      <div className="hidden" aria-hidden="true">
+        <input
+          type="text"
+          name="_gotcha" // FormBold specifically looks for this name to prevent spam
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Name Input */}
+        <div className="group flex flex-col gap-2">
+          <label htmlFor="name" className={labelClasses}>01. NAME</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="John Doe"
+            value={formData.name}
+            onChange={handleChange}
+            className={inputClasses}
+            required
+          />
+        </div>
+
+        {/* Email Input */}
+        <div className="group flex flex-col gap-2">
+          <label htmlFor="email" className={labelClasses}>02. EMAIL</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="john@example.com"
+            value={formData.email}
+            onChange={handleChange}
+            className={inputClasses}
+            required
+          />
+        </div>
+      </div>
+
+      {/* Message Input */}
+      <div className="group flex flex-col gap-2">
+        <label htmlFor="message" className={labelClasses}>03. MESSAGE</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Tell me about your project..."
+          value={formData.message}
+          onChange={handleChange}
+          rows={5}
+          className={classNames(inputClasses, "resize-none")}
+          required
+        />
+      </div>
+
+      <div className="flex flex-col items-start gap-4 pt-4">
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="group relative w-full md:w-auto overflow-hidden bg-neutral-900 dark:bg-white text-white dark:text-black font-bold py-4 px-12 rounded-2xl transition-all active:scale-95 disabled:opacity-50 shadow-xl"
+        >
+          <span className="relative z-10 flex items-center justify-center gap-2">
+            {isLoading ? "SENDING..." : "SEND MESSAGE"}
+            {!isLoading && <span className="group-hover:translate-x-1 transition-transform">→</span>}
+          </span>
+          {/* Animated background fill */}
+          <div className="absolute inset-0 bg-[#E2FF3B] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+        </button>
+
+        {error && (
+          <p className="text-red-500 dark:text-red-400 text-xs font-mono animate-pulse">
+            ✕ {error}
           </p>
-          <div className="flex gap-4">
-            <div className="w-full">
-              <label
-                htmlFor="name"
-                className="block text-sm dark:text-white font-medium text-gray-600"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="mt-1 p-2 w-full rounded-lg dark:bg-white/20 dark:border-neutral-500 dark:focus:border-white/80 bg-white shadow-1 border focus:border-black focus:ring-0 ring-0 focus-visible:outline-none"
-                required
-              />
-            </div>
-
-            <div className="w-full">
-              <label
-                htmlFor="email"
-                className="block text-sm dark:text-white font-medium text-gray-600"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="mt-1 p-2 w-full rounded-lg dark:bg-white/20 dark:border-neutral-500 dark:focus:border-white/80 bg-white shadow-1 border focus:border-black focus:ring-0 ring-0 focus-visible:outline-none"
-                required
-              />
-            </div>
-          </div>
-
-          <div className="w-full">
-            <label
-              htmlFor="message"
-              className="block text-sm dark:text-white font-medium text-gray-600"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={6}
-              className="mt-1 p-2 w-full rounded-lg dark:bg-white/20 dark:border-neutral-500 dark:focus:border-white/80 bg-white shadow-1 border focus:border-black focus:ring-0 ring-0 focus-visible:outline-none"
-              required
-            />
-          </div>
-          <div className="flex flex-col w-full items-start gap-2">
-            <button
-              type="submit"
-              className="bg-black w-full dark:bg-white gap-2 dark:text-black p-3 text-sm text-white rounded-lg hover:animate-glow dark:hover:animate-glowDark text-center"
-            >
-              Submit
-            </button>
-            {error && <p className="text-red-500">{error}</p>}
-          </div>
-        </>
-      )}
+        )}
+      </div>
     </form>
   );
 };
